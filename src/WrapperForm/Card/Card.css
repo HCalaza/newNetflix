@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Martel+Sans&display=swap");
-
 .cardWrapper {
   flex: 1 0 21%;
   background-color: grey;
@@ -26,21 +24,16 @@
 
 
 .title {
-  font-family: 'Martel Sans', sans-serif;
-  text-transform: uppercase;
+  font-family: "Ubuntu", sans-serif;
   color: #d81F26;
   line-height: 0.4;
   font-weight: bold;
   display: none;
-  font-size: 16px;
-
 }
 
 
 .bodyText{
-  font-family: 'Martel Sans', sans-serif;
-  font-size: 12px;
-
+  font-family: "Cabin", sans-serif;
   line-height: 0.2;
   color: white;
   display:none;

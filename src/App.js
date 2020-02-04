@@ -3,15 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 import Header from "./Header/header.js";
 import Footer from "./Footer/footer.js";
-import WrapperList from "./WrapperList/WrapperList.js";
-
+import Nav from "./Nav/Nav.js"
 
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <WrapperList/>
+      <Nav/>
       {/* NAV*/}
         {/* TAB SELECTED*/}
         {/* TAB DESELECTED*/}

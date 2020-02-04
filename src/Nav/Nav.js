@@ -1,26 +1,43 @@
 import React, { Component } from 'react';
 import './Nav.css';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import WrapperList from "./../WrapperList/WrapperList.js";
+import WrapperForm from "./../WrapperForm/WrapperForm.js";
+//
 class Nav extends Component {
-  // constructor(props){
-    // super(props);
-    // this.state = {};
-  // }
+render() {
+  return (
+    <Router>
+      <div className="content">
+        <nav className="navBar">
+          <ul className="mainMenu">
+            <Link to="/" className="menuElement" activeClassName="activeMenuelement">
+              <li className="textLink">Content list</li>
+            </Link>
 
-  // componentWillMount(){}
-  // componentDidMount(){}
-  // componentWillUnmount(){}
+            <Link to="/addcontent" className="menuElement" activeClassName="activeMenuelement">
+              <li className="textLink">Add content</li>
+            </Link>
+          </ul>
+        </nav>
 
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
+        <Switch>
 
-  render() {
-    return (
-      <div></div>
-    );
-  }
-}
+          <Route exact path="/">
+            <WrapperList />
+          </Route>
+          <Route path="/addcontent">
+            <WrapperForm />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}}
 
 export default Nav;
