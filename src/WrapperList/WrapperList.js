@@ -6,34 +6,51 @@ class WrapperList extends Component {
   render() {
     return (
       <div className="wrapperList">
+        <div className="wrapperRow">
+          <Card />
+          <Card />
+          <Card />
+        </div>
+        <div className="wrapperRow">
+          <Card />
+          <Card />
+          <Card />
+        </div>
+        <div className="wrapperRow">
+          <Card />
+          <Card />
+          <Card />
+        </div>
+        <div className="wrapperRow">
+          <Card />
+          <Card />
+          <Card />
+        </div>
+        <div className="wrapperRow">
+          <Card />
+          <Card />
+          <Card />
+        </div>
+        <div className="wrapperRow">
+          <Card />
+          <Card />
+          <Card />
+        </div>
+        <div className="wrapperRow">
+          <Card />
+          <Card />
+          <Card />
+        </div>
+        <div className="wrapperRow">
+          <Card />
+          <Card />
+          <Card />
+        </div>
 
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
 
 
-</div>
+
+      </div>
   )
   }
 }
