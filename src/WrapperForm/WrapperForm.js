@@ -11,7 +11,6 @@ class WrapperForm extends Component {
       <div className="wrapperForm">
         <Selection />
         <Input />
-        <Input2 />
         <Button />
       </div>
     );
