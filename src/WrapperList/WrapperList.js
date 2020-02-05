@@ -12,11 +12,7 @@ class WrapperList extends Component {
           <Card />
           <Card />
           <Card />
-        </div>
-        <div className="wrapperRow">
-          <Card />
-          <Card />
-          <Card />
+
         </div>
         <div className="wrapperRow">
           <Card />
