@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 import Header from "./Header/header.js";
 import Footer from "./Footer/footer.js";
 import Nav from "./Nav/Nav.js"
@@ -9,30 +9,17 @@ import Nav from "./Nav/Nav.js"
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <Nav/>
       {/* NAV*/}
-        {/* TAB SELECTED*/}
-        {/* TAB DESELECTED*/}
+      {/* TAB SELECTED*/}
+      {/* TAB DESELECTED*/}
 
       {/* CONTENT*/}
-        {/* WRAPPER LIST*/}
-        {/* WRAPPER FORM*/}
+      {/* WRAPPER LIST*/}
+      {/* WRAPPER FORM*/}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <Footer/>
+      <Footer />
     </div>
   );
 }
