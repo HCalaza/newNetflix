@@ -1,0 +1,12 @@
+/*
+ * Input css File
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Martel+Sans&display=swap");
+
+.inputText {
+  margin-right: 0;
+  font-family: "Martel Sans", sans-serif;
+  font-weight: bold;
+  color: #ff2010;
+}
