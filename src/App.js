@@ -5,20 +5,14 @@ import Header from "./Header/header.js";
 import Footer from "./Footer/footer.js";
 import WrapperList from "./WrapperList/WrapperList.js";
 // import Form from "./WrapperForm/Form.js";
-import Selection from "./WrapperForm/Selection.js";
-import Input from "./WrapperForm/Input.js";
-import Input2 from "./WrapperForm/Input.js";
-import Button from "./WrapperForm/Button.js";
+
+import Nav from "./Nav/Nav.js";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <WrapperList />
-      <Selection />
-      <Input />
-      <Input2 />
-      <Button />
+      <Nav />
       {/* NAV*/}
       {/* TAB SELECTED*/}
       {/* TAB DESELECTED*/}

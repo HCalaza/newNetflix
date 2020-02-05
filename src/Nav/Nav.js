@@ -1,26 +1,46 @@
 import React, { Component } from 'react';
 import './Nav.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink
+} from "react-router-dom";
+import WrapperList from "./../WrapperList/WrapperList.js";
+import WrapperForm from "./../WrapperForm/WrapperForm.js";
+import logo from './../logo.svg';
 
+//
 class Nav extends Component {
-  // constructor(props){
-    // super(props);
-    // this.state = {};
-  // }
+render() {
+  return (
+    <Router>
+      <div className="content">
+        <nav className="navBar">
+          <ul className="mainMenu">
+            <NavLink to="/contentlist" className="menuElement" activeClassName="menuElementActive">
+              <li className="textLink">Content list</li>
+            </NavLink>
 
-  // componentWillMount(){}
-  // componentDidMount(){}
-  // componentWillUnmount(){}
+            <NavLink to="/addcontent" className="menuElement" activeClassName="menuElementActive">
+              <li className="textLink">Add content</li>
+            </NavLink>
+          </ul>
+        </nav>
 
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
+        <Switch>
 
-  render() {
-    return (
-      <div></div>
-    );
-  }
-}
+          <Route exact path="/contentlist">
+            <WrapperList />
+          </Route>
+          <Route path="/addcontent">
+            <WrapperForm />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}}
 
 export default Nav;

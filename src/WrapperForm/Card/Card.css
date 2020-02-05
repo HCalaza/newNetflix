@@ -1,0 +1,48 @@
+.cardWrapper {
+  flex: 1 0 21%;
+  background-color: grey;
+  margin: 5px;
+  height: 15vmin;
+  padding-left: 8px;
+  padding-top: 8px;
+  display: flex;
+  align-items:flex-end;
+  box-shadow: 2px 3px rgba(0, 0, 0, .2);
+
+}
+.cardWrapper:hover {
+  cursor: pointer;
+    box-shadow: 2px 3px rgba(0, 0, 0, .4);
+    background: linear-gradient(to bottom, rgba(238, 238, 238, 0) 33%, #000000);
+    background-color: white;
+    flex: 1 0 30%;
+    transition: 0.3s;
+}
+.cardWrapper:active {
+  background-color: grey;
+}
+
+
+.title {
+  font-family: "Ubuntu", sans-serif;
+  color: #d81F26;
+  line-height: 0.4;
+  font-weight: bold;
+  display: none;
+}
+
+
+.bodyText{
+  font-family: "Cabin", sans-serif;
+  line-height: 0.2;
+  color: white;
+  display:none;
+}
+.cardWrapper:hover > .textWrapper > .title {
+  display:block;
+  transition: 0.3s;
+}
+.cardWrapper:hover > .textWrapper > .bodyText {
+  display:block;
+  transition: 0.3s;
+}

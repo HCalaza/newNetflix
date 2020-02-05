@@ -1,7 +1,43 @@
-/*
- * Nav css File
-*/
+@import url("https://fonts.googleapis.com/css?family=Martel+Sans&display=swap");
 
-.Nav {
-    /* propertys here */
+.navBar {
+  background-color: black;
+  height: 56px;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainMenu {
+  display:flex;
+  width: 100%;
+  padding-inline-start: 0px;
+}
+.menuElement{
+  color: white;
+  list-style-type: none;
+  text-transform: uppercase;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  text-decoration: none;
+  font-family: 'Martel Sans', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.menuElement:hover {
+  background-color: #4F0C0E;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.menuElement:active {
+  background-color: #D81F26;
+  color: black;
+}
+.menuElementActive {
+  color: #D81F26;
 }

@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Martel+Sans&display=swap");
+.tab {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  align-items:center;
+  flex-direction: column;
+}
+.indicator {
+  background-color: #D81F26;
+  height: 4px;
+  width: 100%;
+  align-self: flex-end;
+}
+.tab:hover {
+  background-color: #D81F26;
+  cursor: pointer;
+}
+.tab:active {
+  background-color: white;
+}
+.tab:active > .sectionName {
+  color: #D81F26;
+}
+.sectionName {
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-family: 'Martel Sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+}
+.active {
+  background-color: green;
+  height: 4px;
+  width: 100%;
+  align-self: flex-end;
+}
