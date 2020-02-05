@@ -1,0 +1,12 @@
+/*
+ * SearchBar css File
+*/
+/* .inputText {
+  background-color: crimson;
+} */
+button:hover {
+  background-color: gray;
+}
+.btn active {
+  background-color: gray;
+}
