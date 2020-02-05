@@ -30,17 +30,14 @@
 }
 
 .menuElement:hover {
-  background-color: #D81F26;
+  background-color: #4F0C0E;
   cursor: pointer;
   transition: 0.5s;
 }
 .menuElement:active {
-  background-color: white;
+  background-color: #D81F26;
+  color: black;
+}
+.menuElementActive {
   color: #D81F26;
 }
-.activeMenuelement{
-  background-color: gold;
-  color:Black ;
-}
-  /* align-items: center;
-  justify-content: center; */

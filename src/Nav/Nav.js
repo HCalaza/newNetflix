@@ -4,10 +4,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  NavLink
 } from "react-router-dom";
 import WrapperList from "./../WrapperList/WrapperList.js";
 import WrapperForm from "./../WrapperForm/WrapperForm.js";
+import logo from './../logo.svg';
+
 //
 class Nav extends Component {
 render() {
@@ -16,19 +19,19 @@ render() {
       <div className="content">
         <nav className="navBar">
           <ul className="mainMenu">
-            <Link to="/" className="menuElement" activeClassName="activeMenuelement">
+            <NavLink to="/contentlist" className="menuElement" activeClassName="menuElementActive">
               <li className="textLink">Content list</li>
-            </Link>
+            </NavLink>
 
-            <Link to="/addcontent" className="menuElement" activeClassName="activeMenuelement">
+            <NavLink to="/addcontent" className="menuElement" activeClassName="menuElementActive">
               <li className="textLink">Add content</li>
-            </Link>
+            </NavLink>
           </ul>
         </nav>
 
         <Switch>
 
-          <Route exact path="/">
+          <Route exact path="/contentlist">
             <WrapperList />
           </Route>
           <Route path="/addcontent">
