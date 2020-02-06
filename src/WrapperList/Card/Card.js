@@ -2,21 +2,25 @@ import React, { Component } from "react";
 import "./Card.css";
 
 class Card extends Component {
+  constructor (props){
+    super(props)
+  }
+
   render() {
     return (
       <div className="cardWrapper">
         <div className="textWrapper">
           <div className="title">
-            <p> TITLE </p>
+            <p> {this.props.title} </p>
           </div>
           <div className="bodyText">
-            <p> Tipo</p>
+            <p> {this.props.director}</p>
           </div>
           <div className="bodyText">
-            <p> Director</p>
+            <p> {this.props.type}</p>
           </div>
           <div className="bodyText">
-            <p> Descripción</p>
+            <p> {this.props.description}</p>
           </div>
         </div>
       </div>
