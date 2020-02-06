@@ -6,6 +6,18 @@ import Input2 from "./Input.js";
 import Button from "./Button.js";
 
 class WrapperForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      films: "duration",
+      tvShows: "chapters",
+      documental: "scopes"
+    };
+  }
+
+  changeItem() {}
+
   render() {
     return (
       <div className="wrapperForm">
@@ -16,5 +28,4 @@ class WrapperForm extends Component {
     );
   }
 }
-
 export default WrapperForm;

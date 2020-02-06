@@ -4,10 +4,6 @@ import Form from "./Form.js";
 import "./Selection.css";
 
 export default class Selection extends Component {
-  render() {
-    return <Form />;
-  }
-
   constructor(props) {
     super(props);
     this.state = {
@@ -23,13 +19,11 @@ export default class Selection extends Component {
     const options = [
       { value: "Films", label: "Films" },
       { value: "Series", label: "Tv Shows" },
-      { value: "Documentaries", label: "Documentaries" }
+      { value: "Documental", label: "Documental" }
     ];
     return (
       <div className="wrapperSelection">
         <Select
-          value=""
-          onChange=""
           value={selectedOption}
           onChange={this.handleChange}
           options={options}
