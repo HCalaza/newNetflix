@@ -13,13 +13,7 @@ function App() {
     <div className="App">
       <Header />
       <Nav />
-      {/* NAV*/}
-      {/* TAB SELECTED*/}
-      {/* TAB DESELECTED*/}
-
-      {/* CONTENT*/}
-      {/* WRAPPER LIST*/}
-      {/* WRAPPER FORM*/}
+    
 
       <Footer />
     </div>

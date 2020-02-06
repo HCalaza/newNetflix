@@ -25,7 +25,7 @@ class SearchField extends Component {
         </div>
 
         <div className="inputText">
-          <Input value=" " />
+          <Input placeholder= "Esto es para buscar" />
         </div>
       </React.Fragment>
     );
