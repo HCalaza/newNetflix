@@ -4,9 +4,19 @@
 /* .inputText {
   background-color: crimson;
 } */
-button:hover {
-  background-color: gray;
+.SearchField {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-.btn active {
-  background-color: gray;
+
+.inputText {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttonSearch {
+  width: 15%;
+  margin-left: 2.5%;
 }
