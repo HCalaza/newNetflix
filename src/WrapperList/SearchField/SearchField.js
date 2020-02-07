@@ -1,51 +1,41 @@
 import React, { Component } from "react";
 import "./SearchField.css";
 import Input from "../../Input/Input.js";
+import ButtonPrimary from "../../Button/ButtonPrimary.js"
+import MoviesDB from "./../../MoviesDB/MoviesDB.js"
+
+
+
 class SearchField extends Component {
+constructor(props){
+  super (props);
+  this.state = {
+    value: ""
+  }
+}
+updateFilm(newValue){
+  this.setState({
+    value: newValue
+  })
+}
+handleChange (event){
+  this.props.updateFilm(event.target.value)
+}
+
+
+
   render() {
     return (
-      <React.Fragment>
-        <div id="myBtnContainer">
-          <button className="btn active" onClick={console.log("todos")}>
-            {" "}
-            Show all
-          </button>
-          <button className="btn" onClick={console.log("asdasdasd")}>
-            {" "}
-            Movies
-          </button>
-          <button className="btn" onClick={console.log("series")}>
-            {" "}
-            Series
-          </button>
-          <button className="btn" onClick={console.log("Documentals")}>
-            {" "}
-            Documentals
-          </button>
+
+<div className="SearchField">
+        <div className="inputText">
+          <Input placeholder= "Busca una película" updateValue={this.updateValue.bind(this)}
+             />
         </div>
 
-        <div className="inputText">
-          <Input placeholder= "Busca una película" />
-        </div>
-      </React.Fragment>
+</div>
     );
   }
 }
 
 export default SearchField;
-// <button className="btn active" onClick={filterSelection("all")}>
-//   {" "}
-//   Show all
-// </button>
-// <button className="btn" onClick={filterSelection("cars")}>
-//   {" "}
-//   Movies
-// </button>
-// <button className="btn" onClick={filterSelection("animals")}>
-//   {" "}
-//   Series
-// </button>
-// <button className="btn" onClick={filterSelection("fruits")}>
-//   {" "}
-//   Documentals
-// </button>

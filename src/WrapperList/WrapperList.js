@@ -6,6 +6,31 @@ import MoviesDB from "./../MoviesDB/MoviesDB.js";
 import SearchField from "./SearchField/SearchField.js";
 
 class WrapperList extends Component {
+  constructor(props){
+    super (props);
+    this.state = {
+      value: ""
+    }
+  }
+
+  updateFilm(newValue){
+    this.setState({
+      value: newValue
+    })
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
   render() {
     const cardObject = new MoviesDB ()
     const entryData = cardObject.getData()
@@ -14,7 +39,7 @@ class WrapperList extends Component {
 
     return (
       <div className="wrapperList">
-        <SearchField />
+        <SearchField updateFilm={this.updateFilm.bind(this)} />
         <div className="wrapperRow">
             {exitData}
         </div>

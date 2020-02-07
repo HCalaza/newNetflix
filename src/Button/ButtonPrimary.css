@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Martel+Sans&display=swap");
+
+.ButtonText {
+  font-family: "Martel Sans", sans-serif;
+  font-size: 16px;
+  font-weight:bolder;
+  text-transform: uppercase;
+  color: white;
+}
+.ButtonStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 32px;
+  border: solid 1px white ;
+  background-color: rgba(255, 255, 255, 0.2) ;
+  border-radius: 8px;
+
+}
+.ButtonStyle:hover {
+  border: solid 1px #D81F26 ;
+  background-color: rgba(216, 31, 38, 0.5);
+  cursor: pointer;
+}
+.ButtonStyle:active{
+  background-color: #4F0C0E;
+}

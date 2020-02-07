@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Martel+Sans&display=swap");
 
 .cardWrapper {
-  flex: 1 0 21%;
+  flex: 1 0 20%;
   background-color: grey;
   margin: 5px;
   height: 15vmin;
