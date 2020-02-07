@@ -12,7 +12,6 @@ class WrapperList extends Component {
     const entryData = cardObject.getData()
     const exitData = entryData.map ((i) => <Card title= {i.title} type={i.type} director={i.director} description={i.description} />)
 
-
     return (
       <div className="wrapperList">
         <SearchField />

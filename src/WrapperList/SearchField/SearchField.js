@@ -1,3 +1,5 @@
+//SearchField
+
 import React, { Component } from "react";
 import "./SearchField.css";
 import Input from "../../Input/Input.js";
@@ -19,16 +21,19 @@ updateValue(newValue){
   })
   console.log(this.state.value)
 }
+
+
+
+
   render() {
     return (
 
 <div className="SearchField">
         <div className="inputText">
-          <Input placeholder= "Busca una película" updateValue={this.updateValue.bind(this)} />
+          <Input placeholder= "Busca una película" updateValue={this.updateValue.bind(this)}
+             />
         </div>
-        <div className="buttonSearch">
-          <ButtonPrimary buttonText="Buscar" />
-        </div>
+
 </div>
     );
   }
