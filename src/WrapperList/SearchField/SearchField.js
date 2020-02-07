@@ -13,26 +13,22 @@ constructor(props){
     value: ""
   }
 }
-updateFilm(newValue){
+updateValue(newValue){
   this.setState({
     value: newValue
   })
+  console.log(this.state.value)
 }
-handleChange (event){
-  this.props.updateFilm(event.target.value)
-}
-
-
-
   render() {
     return (
 
 <div className="SearchField">
         <div className="inputText">
-          <Input placeholder= "Busca una película" updateValue={this.updateValue.bind(this)}
-             />
+          <Input placeholder= "Busca una película" updateValue={this.updateValue.bind(this)} />
         </div>
-
+        <div className="buttonSearch">
+          <ButtonPrimary buttonText="Buscar" />
+        </div>
 </div>
     );
   }
