@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./Input.css";
+import WrapperForm from "./WrapperForm.js";
 
 class Input extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       Title: "",
@@ -19,17 +20,36 @@ class Input extends Component {
   }
 
   drawInput() {
-    // si films...
-    /* return <label>
-      Duration
-      <input type="number" onChange={this.handleChange.bind(this)} />
-    </label>
-    */
+    if (this.props.typeItem == 1) {
+      return (
+        <label>
+          Duración Película
+          <input type="text" onChange={this.handleChange.bind(this)} />
+        </label>
+      );
+    } else if (this.props.typeItem == 2) {
+      return (
+        <label>
+          Número de capítulos
+          <input type="text" onChange={this.handleChange.bind(this)} />
+        </label>
+      );
+    } else if (this.props.typeItem == 3) {
+      return (
+        <label>
+          Temática del Documental
+          <input type="text" onChange={this.handleChange.bind(this)} />
+        </label>
+      );
+    }
   }
 
   render() {
+    console.log("pintate joder!s");
+    console.log("typeItem", this.props.typeItem);
     return (
       <form>
+        <p>hola = {this.props.typeItem}</p>
         <h2>Enter your options</h2>
 
         <label>

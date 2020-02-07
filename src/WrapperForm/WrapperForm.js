@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./WrapperList.css";
 import Selection from "./Selection.js";
 import Input from "./Input.js";
-import Input2 from "./Input.js";
 import Button from "./Button.js";
 
 class WrapperForm extends Component {
@@ -10,19 +9,29 @@ class WrapperForm extends Component {
     super(props);
 
     this.state = {
-      films: "duration",
-      tvShows: "chapters",
-      documental: "scopes"
+      typeItem: 0,
+      title: "",
+      director: ""
     };
   }
 
-  changeItem() {}
-
+  changeTypeOf(value) {
+    this.setState({ typeItem: value });
+  }
+  sacarporconsola() {
+    console.log("typeW", this.state.typeItem);
+    console.log(this.state.typeItem.value);
+  }
   render() {
+    this.sacarporconsola();
     return (
       <div className="wrapperForm">
-        <Selection />
-        <Input />
+        <Selection changeItem={this.changeTypeOf.bind(this)} />
+        <Input
+          typeItem={this.state.typeItem}
+          value={this.newFilms}
+          options={this.options}
+        />
         <Button />
       </div>
     );
