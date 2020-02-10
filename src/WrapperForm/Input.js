@@ -49,7 +49,7 @@ class Input extends Component {
     console.log("typeItem", this.props.typeItem);
     return (
       <form>
-        <p>hola = {this.props.typeItem}</p>
+        {this.props.typeItem}
         <h2>Enter your options</h2>
 
         <label>
