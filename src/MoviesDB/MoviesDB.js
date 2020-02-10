@@ -10,6 +10,7 @@ this.Movie = [
   {title:"Fast & Furious 6", type: "Film", director: "Justin Lin", description: ""},
   {title:"Fast & Furious 5", type: "Film", director: "Justin Lin", description: ""},
   {title:"Fast & Furious 4", type: "Film", director: "Justin Lin", description: ""},
+  {title:"Star Wars", type: "Film", director: "Justin Lin", description: ""},
   {title:"Fast & Furious 3", type: "Film", director: "Justin Lin", description: ""},
   {title:"Fast & Furious 2", type: "Film", director: "Justin Lin", description: ""},
   {title:"Fast & Furious 1", type: "Film", director: "Justin Lin", description: ""}

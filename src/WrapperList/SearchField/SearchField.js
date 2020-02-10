@@ -16,10 +16,11 @@ constructor(props){
   }
 }
 updateValue(newValue){
+  this.props.updateFilm(newValue);
   this.setState({
     value: newValue
   })
-  console.log(this.state.value)
+  // console.log(this.state.value)
 }
 
 
