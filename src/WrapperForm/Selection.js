@@ -2,35 +2,33 @@ import React, { Component } from "react";
 import Select from "react-select";
 import Form from "./Form.js";
 import "./Selection.css";
+import WrapperForm from "./WrapperForm.js";
 
 export default class Selection extends Component {
-  render() {
-    return <Form />;
-  }
-
   constructor(props) {
     super(props);
     this.state = {
       selectedOption: null
     };
-    this.handleChange = selectedOption => {
-      this.setState({ selectedOption });
-      console.log(`Option selected:`, selectedOption);
-    };
+
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  handleChange(e) {
+    this.setState({ selectedOption: e.value });
+    this.props.changeItem(e.value);
+  }
+
   render() {
-    const { selectedOption } = this.state;
     const options = [
-      { value: "Films", label: "Films" },
-      { value: "Series", label: "Tv Shows" },
-      { value: "Documentaries", label: "Documentaries" }
+      { value: 1, label: "Films" },
+      { value: 2, label: "Tv Shows" },
+      { value: 3, label: "Documental" }
     ];
     return (
       <div className="wrapperSelection">
         <Select
-          value=""
-          onChange=""
-          value={selectedOption}
+          value={this.state.selectedOption}
           onChange={this.handleChange}
           options={options}
         />
