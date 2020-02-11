@@ -4,7 +4,6 @@ import React, { Component } from "react";
 import "./SearchField.css";
 import Input from "../../Input/Input.js";
 import ButtonPrimary from "../../Button/ButtonPrimary.js"
-import MoviesDB from "./../../MoviesDB/MoviesDB.js"
 
 
 
