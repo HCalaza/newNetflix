@@ -5,57 +5,54 @@ import { ThemeContext } from "../themeContext.js";
 import SearchField from "./SearchField/SearchField.js";
 
 class WrapperList extends Component {
-  constructor (props){
+  constructor(props) {
     super(props);
     this.state = {
       value: ""
-    }
+    };
   }
-  updateValue(newValue){
+  updateValue(newValue) {
     this.setState({
       value: newValue
-    })
+    });
   }
 
-
-render () {
-  return (
-    <div className="wrapperList">
-            <SearchField updateFilm={this.updateValue.bind(this)} />
-  <ThemeContext.Consumer>
-    {
-      MoviesDataBase => {
-
-          return (
-            <div>
-              <div className="wrapperRow">
-               {
-                MoviesDataBase.filter(film => {
-                 if(film.title.toLowerCase().match(this.state.value.toLowerCase()) != null)
-                 {
-                   return (film);
-                 }
-               }).map(movie => (
-                   <Card
-                     title={movie.title}
-                     type={movie.type}
-                     director={movie.director}
-                     description={movie.description}
-                   />
-                 ))}
+  render() {
+    return (
+      <div className="wrapperList">
+        <SearchField updateFilm={this.updateValue.bind(this)} />
+        <ThemeContext.Consumer>
+          {MoviesDataBase => {
+            return (
+              <div>
+                <div className="wrapperRow">
+                  console.log(MoviesDataBase)
+                  {MoviesDataBase.movies
+                    .filter(film => {
+                      if (
+                        film.title
+                          .toLowerCase()
+                          .match(this.state.value.toLowerCase()) != null
+                      ) {
+                        return film;
+                      }
+                    })
+                    .map(movie => (
+                      <Card
+                        title={movie.title}
+                        type={movie.type}
+                        director={movie.director}
+                        description={movie.description}
+                      />
+                    ))}
+                </div>
               </div>
-            </div>
-          )
-      }
-    }
-
-
-  </ThemeContext.Consumer>
-  </div>
-  )
-}
-
-
+            );
+          }}
+        </ThemeContext.Consumer>
+      </div>
+    );
+  }
 }
 export default WrapperList;
 //   constructor(props){
@@ -92,7 +89,6 @@ export default WrapperList;
 //         <SearchField updateFilm={this.updateValue.bind(this)} />
 //         <div className="wrapperRow">
 //
-
 
 //          </div>
 //       </div>

@@ -1,26 +1,13 @@
 {
-  "Films": [
+  "value": [
     {
-      "title": "Fast & Furious 9",
-      "type": "Film",
-      "director": "Justin Pean",
-      "description": ""
-    }
-  ],
-  "TvShows": [
-    {
-      "title": "Game of Thrones",
-      "type": "Tv Show",
-      "director": "D&D",
-      "description": ""
-    }
-  ],
-  "Documental": [
-    {
-      "title": "Supersize me",
-      "type": "Documental",
-      "director": "The guy that directed Supersize me",
-      "description": ""
+      "type": "",
+      "title": "",
+      "director": "",
+      "img": "",
+      "filmDuration": "",
+      "numberOfEpisodes": "",
+      "scopeOfDocumental": ""
     }
   ]
 }
