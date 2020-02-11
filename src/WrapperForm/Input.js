@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Input.css";
 import WrapperForm from "./WrapperForm.js";
-
+import { ThemeContext } from "../themeContext.js";
 class Input extends Component {
   constructor(props) {
     super(props);
@@ -48,24 +48,32 @@ class Input extends Component {
     console.log("pintate joder!s");
     console.log("typeItem", this.props.typeItem);
     return (
-      <form>
-        {this.props.typeItem}
-        <h2>Enter your options</h2>
+      <ThemeContext.Consumer>
+        <form>
+          {this.props.typeItem}
+          <h2>Enter your options</h2>
 
-        <label>
-          Title
-          <input type="text" onChange={this.handleChange.bind(this)} />
-        </label>
+          <label>
+            Title
+            <input type="text" onChange={this.handleChange.bind(this)} />
+          </label>
 
-        <label>
-          Director
-          <input type="text" onChange={this.handleChange.bind(this)} />
-        </label>
+          <label>
+            Director
+            <input type="text" onChange={this.handleChange.bind(this)} />
+          </label>
 
-        {this.drawInput()}
+          {this.drawInput()}
 
-        <button type="submit">Submit</button>
-      </form>
+          <button
+            type="button"
+            onClick={movieManager => movieManager.UpdateMovies}
+          >
+            {" "}
+            Submit
+          </button>
+        </form>
+      </ThemeContext.Consumer>
     );
   }
 }

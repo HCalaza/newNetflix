@@ -8,16 +8,19 @@ import WrapperList from "./WrapperList/WrapperList.js";
 import { ThemeContext } from "./themeContext.js";
 import ReactDOM from "react-dom";
 import Nav from "./Nav/Nav.js";
-
+import DataManager from "./DataManager/DataManager";
+// import firebase from "firebase";
+import { connect } from "react-firebase";
 // import MoviesDB from "./MoviesDB";
 // import
 // import Form from "./WrapperForm/Form.js";
+const dataBase = DataManager();
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.Movie = [
+    /*this.Movie = [
       {
         title: "Fast & Furious 9",
         type: "Film",
@@ -72,17 +75,36 @@ class App extends Component {
         director: "Justin Lin",
         description: ""
       }
-    ];
+    ];*/
   }
+  GetMovies() {}
+  UpdateMovies(datosForm) {
+    firebase
+      .database()
+      .ref("/users/")
+      .once("value")
+      .then(function(myData) {
+        // Write new user
+        firebase
+          .database()
+          .ref("users/")
+          .set(datosForm);
+      });
+  }
+
   render() {
     return (
       <div className="App">
-        <ThemeContext.Provider value={this.Movie}>
-          <Header />
+        <Header />
+        <ThemeContext.Provider
+          value={{
+            UpdateMovies: this.UpdateMovies.bind(this),
+            GetMovies: this.GetMovies.bind(this)
+          }}
+        >
           <Nav />
-
-          <Footer />
         </ThemeContext.Provider>
+        <Footer />
       </div>
     );
   }

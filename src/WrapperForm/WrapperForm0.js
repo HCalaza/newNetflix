@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./WrapperList.css";
 import Selection from "./Selection.js";
 import Input from "./Input.js";
+import { ThemeContext } from "../themeContext.js";
 
 class WrapperForm extends Component {
   constructor(props) {
@@ -25,12 +26,16 @@ class WrapperForm extends Component {
     this.sacarporconsola();
     return (
       <div className="wrapperForm">
-        <Selection changeItem={this.changeTypeOf.bind(this)} />
-        <Input
-          typeItem={this.state.typeItem}
-          value={this.newFilms}
-          options={this.options}
-        />
+        <ThemeContext.Consumer>
+        {movieManager => 
+}
+          <Selection changeItem={this.changeTypeOf.bind(this)} />
+          <Input
+            typeItem={this.state.typeItem}
+            value={this.newFilms}
+            options={this.options}
+          />
+        </ThemeContext.Consumer>
       </div>
     );
   }
