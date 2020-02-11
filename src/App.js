@@ -70,6 +70,48 @@ class App extends Component {
         description: ""
       },
       {
+        title: "Star Wars Episode 1",
+        type: "Film",
+        director: "Justin Lin",
+        description: ""
+      },
+      {
+        title: "Star Wars Episode 2",
+        type: "Film",
+        director: "Justin Lin",
+        description: ""
+      },
+      {
+        title: "Star Wars Episode 3",
+        type: "Film",
+        director: "Justin Lin",
+        description: ""
+      },
+      {
+        title: "Star Wars Episode 4",
+        type: "Film",
+        director: "Justin Lin",
+        description: ""
+      },
+      {
+        title: "Star Trek",
+        type: "Film",
+        director: "Justin Lin",
+        description: ""
+      },
+      {
+        title: "Harry Potter",
+        type: "Film",
+        director: "Justin Lin",
+        description: ""
+      },
+      {
+        title: "Harry el Sucio",
+        type: "Film",
+        director: "Justin Lin",
+        description: ""
+      },
+      {
         title: "Fast & Furious 1",
         type: "Film",
         director: "Justin Lin",
