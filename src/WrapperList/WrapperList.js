@@ -27,7 +27,6 @@ class WrapperList extends Component {
     const filteredSearch = entryData.filter((film) => {
       if(film.title.toLowerCase().match(this.state.value.toLowerCase()) != null)
       {
-        console.log(film);
         return (film);
       }
     });//this.state.value);
