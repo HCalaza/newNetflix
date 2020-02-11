@@ -11,12 +11,8 @@
 }
 
 .inputText {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.buttonSearch {
-  width: 15%;
-  margin-left: 2.5%;
 }
