@@ -20,19 +20,19 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.Movie = [];
+    this.state = { Movie: [] };
   }
   GetMovies() {
     return firebase
       .database()
-      .ref("/value")
+      .ref("/moviesList/")
       .once("value")
-      .then(function(myData) {
-        return 1;
+      .then(videoList => {
+        this.setState({ Movie: videoList.val() });
       });
   }
 
-  UpdateMovies(datosForm) {
+  /*UpdateMovies(datosForm) {
     firebase
       .database()
       .ref("/value")
@@ -44,7 +44,7 @@ class App extends Component {
           .ref("users/")
           .set(datosForm);
       });
-  }
+  }*/
 
   render() {
     return (
@@ -52,12 +52,13 @@ class App extends Component {
         <Header />
         <ThemeContext.Provider
           value={{
-            movies: this.Movie,
-            UpdateMovies: this.UpdateMovies.bind(this),
+            movies: this.state.Movie,
+            /*UpdateMovies: this.UpdateMovies.bind(this),*/
             GetMovies: this.GetMovies.bind(this)
           }}
         >
           <Nav />
+          <button onClick={this.GetMovies.bind(this)}>Firebase</button>
         </ThemeContext.Provider>
         <Footer />
       </div>

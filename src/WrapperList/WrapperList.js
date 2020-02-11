@@ -26,7 +26,6 @@ class WrapperList extends Component {
             return (
               <div>
                 <div className="wrapperRow">
-                  console.log(MoviesDataBase)
                   {MoviesDataBase.movies
                     .filter(film => {
                       if (
