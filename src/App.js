@@ -49,6 +49,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {window.onload = this.GetMovies.bind(this)}
         <Header />
         <ThemeContext.Provider
           value={{
@@ -58,7 +59,6 @@ class App extends Component {
           }}
         >
           <Nav />
-          <button onClick={this.GetMovies.bind(this)}>Firebase</button>
         </ThemeContext.Provider>
         <Footer />
       </div>
