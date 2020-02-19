@@ -21,14 +21,14 @@ export default class Selection extends Component {
 
   render() {
     const options = [
-      { value: 1, label: "Films" },
-      { value: 2, label: "Tv Shows" },
-      { value: 3, label: "Documental" }
+      { value: 0, label: "Films" },
+      { value: 1, label: "Tv Shows" },
+      { value: 2, label: "Documental" }
     ];
     return (
       <div className="wrapperSelection">
         <Select
-          value={this.state.selectedOption}
+          value={(this.state.selectedOption === null ? null : options[this.state.selectedOption])}
           onChange={this.handleChange}
           options={options}
         />

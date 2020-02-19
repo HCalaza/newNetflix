@@ -32,7 +32,7 @@ class App extends Component {
       });
   }
 
-  /*UpdateMovies(datosForm) {
+  UpdateMovies(datosForm) {
     firebase
       .database()
       .ref("/value")
@@ -44,7 +44,7 @@ class App extends Component {
           .ref("users/")
           .set(datosForm);
       });
-  }*/
+  }
 
   render() {
     return (
@@ -54,7 +54,7 @@ class App extends Component {
         <ThemeContext.Provider
           value={{
             movies: this.state.Movie,
-            /*UpdateMovies: this.UpdateMovies.bind(this),*/
+            UpdateMovies: this.UpdateMovies.bind(this),
             GetMovies: this.GetMovies.bind(this)
           }}
         >

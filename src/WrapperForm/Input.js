@@ -49,6 +49,8 @@ class Input extends Component {
     console.log("typeItem", this.props.typeItem);
     return (
       <ThemeContext.Consumer>
+        {(movieManager) => {
+          return (
         <form>
           {this.props.typeItem}
           <h2>Enter your options</h2>
@@ -73,6 +75,7 @@ class Input extends Component {
             Submit
           </button>
         </form>
+      );}}
       </ThemeContext.Consumer>
     );
   }
