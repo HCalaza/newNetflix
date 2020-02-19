@@ -32,18 +32,38 @@ class App extends Component {
       });
   }
 
-  UpdateMovies(datosForm) {
-    firebase
-      .database()
-      .ref("/value")
-      .once("value")
-      .then(function(myData) {
-        // Write new user
-        firebase
-          .database()
-          .ref("users/")
-          .set(datosForm);
-      });
+  UpdateMovies() {
+console.log("hola")
+
+      let movieName = this.state.Title
+      let directorName = this.state.Director
+      let otherDescription = this.state.Description
+      let movieType = this.state.Type
+      let imagenType = this.state.Img
+
+      let numberOfMovies = 0;
+
+      firebase.database ()
+      .ref ("/moviesList/")
+      .once ("value")
+      .then (function(myData){
+        numberOfMovies = myData.val().lenght
+        //console.log (numberOfMovies) Error a corregir
+      })
+
+    .then(function(myData){
+      let movieID = numberOfMovies
+      firebase
+      .database ()
+      .ref ('moviesList/' + movieID)
+      .set ({
+        Title: movieName,
+        Director: directorName,
+        Description: otherDescription,
+        Type: movieType,
+        Img: imagenType
+      }).then(console.log(this.state))
+    })
   }
 
   render() {

@@ -9,7 +9,10 @@ class Input extends Component {
     this.state = {
       Title: "",
       Director: "",
-      Other: ""
+      Description: "",
+      Type:"",
+      Img:""
+
     };
   }
 
@@ -45,12 +48,7 @@ class Input extends Component {
   }
 
   render() {
-    console.log("pintate joder!s");
-    console.log("typeItem", this.props.typeItem);
     return (
-      <ThemeContext.Consumer>
-        {(movieManager) => {
-          return (
         <form>
           {this.props.typeItem}
           <h2>Enter your options</h2>
@@ -65,20 +63,32 @@ class Input extends Component {
             <input type="text" onChange={this.handleChange.bind(this)} />
           </label>
 
+          <label>
+            Description
+            <input type="text" onChange={this.handleChange.bind(this)} />
+          </label>
+
+          <label>
+            Imagen
+            <input type="text" onChange={this.handleChange.bind(this)} />
+          </label>
+
           {this.drawInput()}
 
-          <button
-            type="button"
-            onClick={movieManager => movieManager.UpdateMovies}
-          >
-            {" "}
-            Submit
-          </button>
+          <ThemeContext.Consumer>
+          {movieManager => {
+            return (
+              <button
+                type="button"
+                onClick={movieManager.UpdateMovies}
+              >
+              Submit
+              </button>
+            )}}
+          </ThemeContext.Consumer>
         </form>
-      );}}
-      </ThemeContext.Consumer>
-    );
+      )
+    }
   }
-}
 
 export default Input;
