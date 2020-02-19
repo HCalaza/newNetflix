@@ -15,7 +15,7 @@ export default class Selection extends Component {
   }
 
   handleChange(e) {
-    this.setState({ selectedOption: e.value });
+    this.setState({ selectedOption: e });
     this.props.changeItem(e.value);
   }
 
@@ -28,7 +28,7 @@ export default class Selection extends Component {
     return (
       <div className="wrapperSelection">
         <Select
-          value={(this.state.selectedOption === null ? null : options[this.state.selectedOption])}
+          value={this.state.selectedOption}
           onChange={this.handleChange}
           options={options}
         />
