@@ -33,8 +33,7 @@ class App extends Component {
   }
 
   UpdateMovies() {
-console.log("hola")
-
+     console.log(this.state)
       let movieName = this.state.Title
       let directorName = this.state.Director
       let otherDescription = this.state.Description
@@ -43,27 +42,28 @@ console.log("hola")
 
       let numberOfMovies = 0;
 
-      firebase.database ()
-      .ref ("/moviesList/")
-      .once ("value")
-      .then (function(myData){
-        numberOfMovies = myData.val().lenght
-        //console.log (numberOfMovies) Error a corregir
-      })
-
-    .then(function(myData){
-      let movieID = numberOfMovies
-      firebase
-      .database ()
-      .ref ('moviesList/' + movieID)
-      .set ({
-        Title: movieName,
-        Director: directorName,
-        Description: otherDescription,
-        Type: movieType,
-        Img: imagenType
-      }).then(console.log(this.state))
-    })
+    //   return firebase
+    //     .database()
+    //     .ref("/moviesList/")
+    //     .once("value")
+    //   .then (function(myData){
+    //     numberOfMovies = myData.val().lenght
+    //     //console.log (numberOfMovies) Error a corregir
+    //   })
+    //
+    // .then(function(myData){
+    //   let movieID = numberOfMovies
+    //   firebase
+    //   .database ()
+    //   .ref ('moviesList/' + movieID)
+    //   .set ({
+    //     Title: movieName,
+    //     Director: directorName,
+    //     Description: otherDescription,
+    //     Type: movieType,
+    //     Img: imagenType
+    //   }).then(console.log(this.state))
+    // })
   }
 
   render() {
@@ -74,7 +74,7 @@ console.log("hola")
         <ThemeContext.Provider
           value={{
             movies: this.state.Movie,
-            UpdateMovies: this.UpdateMovies.bind(this),
+            UpdateMovies: this.UpdateMovies,
             GetMovies: this.GetMovies.bind(this)
           }}
         >

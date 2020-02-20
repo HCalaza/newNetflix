@@ -23,25 +23,28 @@ class Input extends Component {
   }
 
   drawInput() {
-    if (this.props.typeItem == 1) {
+    if (this.props.typeItem == 0) {
       return (
         <label>
           Duración Película
-          <input type="text" onChange={this.handleChange.bind(this)} />
+          <input type="text" name="Duración de la película" placeholder="Duración Película" onChange={this.handleChange.bind(this)} />
+          {this.state.Type = "Film"}
+        </label>
+      );
+    } else if (this.props.typeItem == 1) {
+      return (
+        <label>
+          Número de capítulos
+          <input type="text" name="Número de capítulos" placeholder="Número de capítulos" onChange={this.handleChange.bind(this)} />
+          {this.state.Type = "Tv Shows"}
         </label>
       );
     } else if (this.props.typeItem == 2) {
       return (
         <label>
-          Número de capítulos
-          <input type="text" onChange={this.handleChange.bind(this)} />
-        </label>
-      );
-    } else if (this.props.typeItem == 3) {
-      return (
-        <label>
           Temática del Documental
-          <input type="text" onChange={this.handleChange.bind(this)} />
+          <input type="text"name="Temática del Documental" placeholder="Temática del Documental" onChange={this.handleChange.bind(this)} />
+          {this.state.Type = "Documental"}
         </label>
       );
     }
@@ -55,22 +58,22 @@ class Input extends Component {
 
           <label>
             Title
-            <input type="text" onChange={this.handleChange.bind(this)} />
+            <input type="text" name="Title" placeholder="title" onChange={this.handleChange.bind(this)} />
           </label>
 
           <label>
             Director
-            <input type="text" onChange={this.handleChange.bind(this)} />
+            <input type="text" name="Director" placeholder="Director" onChange={this.handleChange.bind(this)} />
           </label>
 
           <label>
             Description
-            <input type="text" onChange={this.handleChange.bind(this)} />
+            <input type="text" name="Description" placeholder="Description" onChange={this.handleChange.bind(this)} />
           </label>
 
           <label>
             Imagen
-            <input type="text" onChange={this.handleChange.bind(this)} />
+            <input type="text" name="Img" placeholder="Imagen" onChange={this.handleChange.bind(this)} />
           </label>
 
           {this.drawInput()}
@@ -80,7 +83,7 @@ class Input extends Component {
             return (
               <button
                 type="button"
-                onClick={movieManager.UpdateMovies}
+                onClick={movieManager.UpdateMovies.bind(this)}
               >
               Submit
               </button>
