@@ -39,31 +39,34 @@ class App extends Component {
       let otherDescription = this.state.Description
       let movieType = this.state.Type
       let imagenType = this.state.Img
-
+      if (movieName == "" || directorName == "" || otherDescription == "" || movieType == "" || imagenType == "") {
+          alert("You should fill all fields")
+          return false
+      }
       let numberOfMovies = 0;
 
-    //   return firebase
-    //     .database()
-    //     .ref("/moviesList/")
-    //     .once("value")
-    //   .then (function(myData){
-    //     numberOfMovies = myData.val().lenght
-    //     //console.log (numberOfMovies) Error a corregir
-    //   })
-    //
-    // .then(function(myData){
-    //   let movieID = numberOfMovies
-    //   firebase
-    //   .database ()
-    //   .ref ('moviesList/' + movieID)
-    //   .set ({
-    //     Title: movieName,
-    //     Director: directorName,
-    //     Description: otherDescription,
-    //     Type: movieType,
-    //     Img: imagenType
-    //   }).then(console.log(this.state))
-    // })
+       firebase
+        .database()
+        .ref("/moviesList/")
+        .once("value")
+      .then (function(myData){
+         numberOfMovies = Object.keys(myData.val()).length;
+        console.log (numberOfMovies)
+      })
+
+    .then(function(myData){
+      let movieID = numberOfMovies +1
+      firebase
+      .database ()
+      .ref ('moviesList/' + movieID)
+      .set ({
+        Title: movieName,
+        Director: directorName,
+        Description: otherDescription,
+        Type: movieType,
+        Img: imagenType
+      })
+   })
   }
 
   render() {
