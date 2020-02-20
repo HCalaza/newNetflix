@@ -11,16 +11,16 @@ class Card extends Component {
       <div className="cardWrapper">
         <div className="textWrapper">
           <div className="title">
-            <p> {this.props.title} </p>
+            <p> {this.props.Title} </p>
           </div>
           <div className="bodyText">
-            <p> {this.props.director}</p>
+            <p> {this.props.Director}</p>
           </div>
           <div className="bodyText">
-            <p> {this.props.type}</p>
+            <p> {this.props.Type}</p>
           </div>
           <div className="bodyText">
-            <p> {this.props.description}</p>
+            <p> {this.props.Description}</p>
           </div>
         </div>
       </div>
