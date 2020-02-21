@@ -43,6 +43,7 @@ class WrapperList extends Component {
                         Type={movie.Type}
                         Director={movie.Director}
                         Description={movie.Description}
+                        Img = {movie.Img}
                       />
                     ))}
                 </div>
