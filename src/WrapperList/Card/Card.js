@@ -9,12 +9,12 @@ class Card extends Component {
 stringLength() {
   let titleLength = this.props.Title
 
-  if (titleLength.length> 10) {
-    titleLength = titleLength.substring (0,10)
+  if (titleLength.length> 20) {
+    titleLength = titleLength.substring (0,20)
     return titleLength + "..."
   }
   else {
-    return this.props.Title
+    return titleLength
   }
 }
 
@@ -26,7 +26,9 @@ stringLength() {
         </div>
         <div className="textWrapper">
         <div className="title">
-        <p> {this.stringLength}</p>
+        <p>
+        {this.stringLength()}
+        </p>
         </div>
         <div className="bodyText">
         <p> {this.props.Director}</p>
