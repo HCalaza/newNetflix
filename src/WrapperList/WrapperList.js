@@ -28,11 +28,10 @@ class WrapperList extends Component {
                 <div className="wrapperRow">
                   {MoviesDataBase.movies
                     .filter(film => {
-                      console.log(film);
                       if (
-                        film.Title
-                          .toLowerCase()
-                          .match(this.state.value.toLowerCase()) != null
+                        film.Title.toLowerCase().match(
+                          this.state.value.toLowerCase()
+                        ) != null
                       ) {
                         return film;
                       }

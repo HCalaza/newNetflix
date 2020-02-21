@@ -15,74 +15,71 @@ import { connect } from "react-firebase";
 // import
 // import Form from "./WrapperForm/Form.js";
 const dataBase = DataManager();
-
+const furgonetaDePelis = [];
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = { Movie: [] };
   }
+  initApp() {
+    console.log("initApp");
+    this.GetMovies();
+    this.FetchMovies();
+  }
   GetMovies() {
+    console.log("getmovies");
     return firebase
       .database()
       .ref("/moviesList/")
       .once("value")
       .then(videoList => {
+        console.log(videoList.val());
         this.setState({ Movie: videoList.val() });
       });
   }
   FetchMovies() {
-    console.log("entra en Fetch Movies");
-    let url =
-      "https://api.themoviedb.org/3/movie/550?api_key=587770ea8dff8673ccc558dabbb682b4";
-    let moviesApiData;
-    let titleApi;
-    let imgApi;
     // make the API call
-    fetch(url)
+    fetch(
+      "https://api.themoviedb.org/3/discover/movie?api_key=587770ea8dff8673ccc558dabbb682b4&sort_by=popularity.desc"
+    )
       .then(res => res.json())
       .then(data => {
-        // iterate over users
-        moviesApiData = data;
-        console.log(moviesApiData);
-
-        imgApi = moviesApiData.backdrop_path;
-        titleApi = moviesApiData.title;
+        data.results.map(item => {
+          furgonetaDePelis.push({
+            Title: item.title,
+            Img:
+              "https://image.tmdb.org/t/p/w300_and_h450_bestv2" +
+              item.poster_path,
+            Type: "",
+            Director: ""
+          });
+          return furgonetaDePelis;
+        });
       })
-      .then(function() {
+      .then(furgo => {
         let numberOfMovies = 0;
+        console.log("hola");
+
         firebase
           .database()
           .ref("/moviesList/")
           .once("value")
           .then(function(myData) {
+            console.log(Object.keys(myData.val()).length);
             numberOfMovies = Object.keys(myData.val()).length;
-            console.log(numberOfMovies);
           })
-
           .then(function() {
             let movieID = numberOfMovies + 1;
-            console.log(movieID);
             firebase
               .database()
-              .ref("moviesList/" + movieID)
-              .set({
-                Title: titleApi
-                // Director: directorName,
-                // Description: otherDescription,
-                // Type: movieType,
-                // Img: imagenType
-              });
+              .ref("moviesList/")
+              .set(furgonetaDePelis);
           });
-      })
-
-      .catch(err => {
-        console.error("Error: ", err);
       });
   }
 
   UpdateMovies() {
-    console.log(this.state);
     let movieName = this.state.Title;
     let directorName = this.state.Director;
     let otherDescription = this.state.Description;
@@ -106,7 +103,6 @@ class App extends Component {
       .once("value")
       .then(function(myData) {
         numberOfMovies = Object.keys(myData.val()).length;
-        console.log(numberOfMovies);
       })
 
       .then(function(myData) {
@@ -127,8 +123,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {(window.onload = this.GetMovies.bind(this))}
-
         <Header />
         <ThemeContext.Provider
           value={{
@@ -137,7 +131,8 @@ class App extends Component {
             GetMovies: this.GetMovies.bind(this)
           }}
         >
-          {this.FetchMovies()}
+          {(window.onload = this.initApp.bind(this))}
+
           <Nav />
         </ThemeContext.Provider>
         <Footer />
