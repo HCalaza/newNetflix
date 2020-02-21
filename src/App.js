@@ -22,12 +22,19 @@ class App extends Component {
 
     this.state = { Movie: [] };
   }
+  initApp() {
+    console.log("initApp");
+    this.GetMovies();
+    this.FetchMovies();
+  }
   GetMovies() {
+    console.log("getmovies");
     return firebase
       .database()
       .ref("/moviesList/")
       .once("value")
       .then(videoList => {
+        console.log(videoList.val());
         this.setState({ Movie: videoList.val() });
       });
   }
@@ -116,8 +123,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {(window.onload = this.GetMovies.bind(this))}
-
         <Header />
         <ThemeContext.Provider
           value={{
@@ -126,7 +131,8 @@ class App extends Component {
             GetMovies: this.GetMovies.bind(this)
           }}
         >
-          {(window.onload = this.FetchMovies)}
+          {(window.onload = this.initApp.bind(this))}
+
           <Nav />
         </ThemeContext.Provider>
         <Footer />
